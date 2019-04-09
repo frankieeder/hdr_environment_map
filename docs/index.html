@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <style>
+        @font-face {
+            font-family: 'Avenir-Heavy';
+            src: url('fonts/Avenir-Heavy.eot'); /* IE9 Compat Modes */
+            src: url('fonts/Avenir-Heavy.eot') format('embedded-opentype'), /* IE6-IE8 */
+            url('fonts/Avenir-Heavy.woff') format('woff'), /* Modern Browsers */
+            url('fonts/Avenir-Heavy.ttf')  format('truetype'), /* Safari, Android, iOS */
+            url('fonts/Avenir-Heavy.svg#svgFontName') format('svg'); /* Legacy iOS */
+        }
+        @font-face {
+            font-family: 'Avenir-Light';
+            src: url('fonts/Avenir-Light.eot'); /* IE9 Compat Modes */
+            src: url('fonts/Avenir-Light.eot') format('embedded-opentype'), /* IE6-IE8 */
+            url('fonts/Avenir-Light.woff') format('woff'), /* Modern Browsers */
+            url('fonts/Avenir-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+            url('fonts/Avenir-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
+        }
+        body {
+            padding: 100px;
+            width: 1000px;
+            margin: auto;
+            text-align: left;
+            font-weight: 300;
+            font-family: 'Avenir-Light', sans-serif;
+            color: #121212;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Avenir-Heavy', sans-serif;
+        }
+        .table_text {
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+    </style>
+<title>Frankie Eder  |  CS 184</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
+<body>
+<br />
+<h1 align="middle">Rendering Synthetic Objects into Real Scenes</h1>
+    <h2 align="middle">Nathan Petreaca, Frankie Eder, Jule Ahmed</h2>
+		<p>Our goal is to add CG objects to a photo, including the actual light from the scene. In essence, we hope to recreate the results of “Rendering Synthetic Objects into Real Scenes: Bridging Traditional and Image-based Graphics with Global Illumination and High Dynamic Range Photography“ (1998) by Paul Debevec. To capture the light and shape of the environment, we will use a metal sphere and a well-tested camera calibration method.</p>
+
+    <h2 align="middle">Goals and Deliverables</h2>
+		<h3 align="middle">Metrics</h2>
+            <p>The main metric we will use to determine the performance of our project will be the quality of the images we are able to generate. However, we suspect that we will be able to use the response curves from each channel to quantitatively measure our correctness.</p>
+		<h3 align="middle">Analysis</h3>
+			<p>We want to understand which method(s) yields the best response curves for HDR images, i.e. we will also compare results between standard 0-255 images and HDR images. We also want to build a high-level understanding how HDR and global illumination interact for the application of environment mapping.
+		<h3 align="middle">Deliverables</h3>
+			<h4 align="middle">Goals</h4>
+				<p>We plan to create .exr environment maps using HDR photos of a metal sphere, and implement them into our Project 3 framework.</p>
+			<h4 align="middle">Aspirations</h4>
+				<p>If time allows, we hope to be able to add CG objects to a photo using the lighting from the scenes we are capturing. The challenge in this problem mainly lies in mapping the 3D space of the CG objects into the photograph, and we anticipate this will be difficult and time consuming.</p>
+</p>
+	
+	<h2 align="middle">Schedule</h2>
+		<h3 align="middle">Week 1 &#38 2</h3>
+			<ul>
+				<li>HDR images</li>
+				<ol>
+					<li>Collect Images</li>
+					<li>Implement Code</li>
+					<li>Create error reduction algorithm to generate response curves</li>
+					<li>Tone map images for viewing</li>
+				</ol>
+			</ul>
+		<h3 align="middle">Week 3</h3>
+			<ul>
+				<li>Correct environment maps from mirrored sphere</li>
+				<ol>
+					<li>Create correct mapping scheme from circular coordinates</li>
+					<li>Implement differential rendering to improve speed</li>
+				</ol>
+			</ul>
+		<h3 align="middle">Week 4</h3>
+			<ul>
+				<li>Putting CG objects into scenes</li>
+				<ol>
+					<li>Gather more test photos</li>
+					<li>Calibrate scene using calibration grid</li>
+					<li>Build/collect test 3D Scenes</li>
+					<li>Map 3D scenes to the 2D image scene using calibrated grid</li>
+					<li>Corrections</li>
+				</ol>
+			</ul>
+	<h2 align="middle">Resources</h2>
+		<h3 align="middle">Related Works</h2>
+			<ul>
+				<li>Paul Debevec. Rendering Synthetic Objects into Real Scenes: Bridging Traditional and Image-based Graphics with Global Illumination and High Dynamic Range Photography, 1998. <a href="http://www.pauldebevec.com/Research/IBL/debevec-siggraph98.pdf">PDF</a></li>
+				<li>Paul Debevec, Jitendra Malik. Recovering High Dynamic Range Radiance Maps from Photographs, 1997. <a href="http://pauldebevec.com/Research/HDR/debevec-siggraph97.pdf">PDF</a></li>
+			</ul>
+		<h3 align="middle">Hardware/Software</h2>
+			<p>We plan to test with typical laptop hardware, and implement in C++ and/or Python.</p>
+			
+</body>
+</html>
+
+
+
+
